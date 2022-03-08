@@ -12,6 +12,9 @@ const StackNavigation = (props) => {
             optimizationsEnabled={true}
             initialRouteName="Splash">
             <Stack.Screen options={{ header: () => null }} name="Splash" component={Splash} />
+
+
+            
         </Stack.Navigator>
     )
 }
