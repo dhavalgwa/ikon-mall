@@ -1,16 +1,15 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 
 import StackNavigation from './src/Navigation/StackNavigation/indexStackNavigation';
 
+
 export default function App() {
   return (
-    <View style={styles.container}>
-      <NavigationContainer>
-        <StackNavigation />
-      </NavigationContainer>
-    </View>
+    <NavigationContainer>
+      <StackNavigation />
+    </NavigationContainer>
   );
 }
 
