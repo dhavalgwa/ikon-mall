@@ -23,7 +23,7 @@ const ShopList = (props) => {
                     function open(str, index, stringToAdd) {
                         return str.substring(0, index) + stringToAdd + str.substring(index, str.length);
                     }
-                    var str = shopData.openTime.toString();
+                    var str = shopData.open.toString();
                     let stringToAdd = ":";
                     const openTime = open(str, str.length == 4 ? 2 : 1, stringToAdd);
 
@@ -32,7 +32,7 @@ const ShopList = (props) => {
                     function close(string, index, stringToAdd) {
                         return string.substring(0, index) + stringToAdd + string.substring(index, string.length);
                     }
-                    let string = shopData.closeTime.toString();
+                    let string = shopData.close.toString();
                     let Add = ":";
                     const closeTime = close(string, string.length == 4 ? 2 : 1, Add);
 
@@ -40,11 +40,11 @@ const ShopList = (props) => {
                         <View key={id} style={Styles.shopContainer}>
                             <TouchableOpacity onPress={() => goToStorePage(shopData)} style={Styles.shopCardView}>
                                 <View style={Styles.imageView}>
-                                    <Image source={{ uri: shopData.shopImage }} style={Styles.image} />
+                                    <Image source={{ uri: shopData.bgImage }} style={Styles.image} />
                                 </View>
                                 <View style={Styles.descriptionView}>
                                     <View style={Styles.description}>
-                                        <Text style={Styles.shopNameText}>{shopData.shopName}</Text>
+                                        <Text style={Styles.shopNameText}>{shopData.name}</Text>
                                         <Text style={{ color: Color.darkWiteColor, fontSize: 10, }}>{shopData.desc}</Text>
                                     </View>
                                 </View>

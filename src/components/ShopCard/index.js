@@ -26,7 +26,7 @@ const ShopCard = (props) => {
         function open(str, index, stringToAdd) {
             return str.substring(0, index) + stringToAdd + str.substring(index, str.length);
         }
-        var str = object.openTime.toString();
+        var str = object.open.toString();
         let stringToAdd = ":";
         const openTime = open(str, str.length == 4 ? 2 : 1, stringToAdd);
 
@@ -35,7 +35,7 @@ const ShopCard = (props) => {
         function close(string, index, stringToAdd) {
             return string.substring(0, index) + stringToAdd + string.substring(index, string.length);
         }
-        let string = object.closeTime.toString();
+        let string = object.close.toString();
         let Add = ":";
         const closeTime = close(string, string.length == 4 ? 2 : 1, Add);
 
@@ -43,11 +43,11 @@ const ShopCard = (props) => {
             <View key={shopId} >
                 <TouchableOpacity onPress={() => goToStorePage(shopId)} style={Styles.cardView}>
                     <View>
-                        <Image style={Styles.image} source={{ uri: object.shopLogo }} />
+                        <Image style={Styles.image} source={{ uri: object.logo }} />
                     </View>
                     <View style={Styles.detailView}>
                         <View style={Styles.name_desc} >
-                            <Text style={Styles.shopeName} >{object.shopName}</Text>
+                            <Text style={Styles.shopeName} >{object.name}</Text>
                             <Text style={Styles.descriptionText}>{object.desc}</Text>
                         </View>
                         <View style={Styles.timeView}>

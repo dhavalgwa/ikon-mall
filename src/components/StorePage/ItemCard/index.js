@@ -56,14 +56,14 @@ const ItemCard = (props) => {
                         <View style={Styles.imageView}>
                             {
                                 data.images.length > 0 ? (
-                                    <Image source={{ uri: data.images[0] }} style={{ height: 100, width: 100 }} />
+                                    <Image source={{ uri: data.images[0] }} style={Styles.itemImage} />
                                 ) : (
-                                    <Image source={require('../../../assets/Images/noImages.jpg')} style={{ height: 120, width: 120 }} />
+                                        <Image source={require('../../../assets/Images/noImages.jpg')} style={Styles.noImage} />
                                 )
                             }
                         </View>
                         <View style={Styles.descriptionView}>
-                            <Text style={{ fontWeight: 'bold', fontSize: 15, width: '90%', paddingLeft: 5 }}>{data.name}</Text>
+                            <Text style={Styles.nameText}>{data.name}</Text>
                         </View>
                         <View style={Styles.ratingView}>
                             <TouchableOpacity>
@@ -80,7 +80,7 @@ const ItemCard = (props) => {
                         start={{ x: 0, y: 0 }}
                         end={{ x: 1, y: 0 }}
                         colors={["#4E6CFF", "#7B9AFF"]}
-                        style={{ height: 49 }}
+                        style={Styles.linearBackground}
                     >
                         <View style={Styles.addItemContainer}>
                             <View style={Styles.addItemView}>

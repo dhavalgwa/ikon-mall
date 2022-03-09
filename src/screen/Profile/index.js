@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { View, ScrollView, Dimensions, TouchableOpacity, Image, Text } from 'react-native';
+import { View, ScrollView, Dimensions, TouchableOpacity, Text } from 'react-native';
 import Styles from '../../screen/Profile/indexStyle';
 import { connect } from 'react-redux';
 import NameImage from '../../components/Profile/NameImage/index';
@@ -8,7 +8,7 @@ import NameImage from '../../components/Profile/NameImage/index';
 // import { AntDesign } from '@expo/vector-icons';
 import Balance from '../../components/Profile/Balance/index';
 import { setProfileFeatures } from '../../redux/action/index';
-import { AnimatedCircularProgress } from 'react-native-circular-progress';
+// import { AnimatedCircularProgress } from 'react-native-circular-progress';
 const { height } = Dimensions.get('window');
 import Header from '../../components/header/index';
 
@@ -90,12 +90,12 @@ const Profile = (props) => {
                                     </View>
                                     <View style={{ position: "absolute", right: 0, alignContent: 'center', justifyContent: 'center' }}>
                                         <View style={{ alignItems: 'flex-end', alignItems: 'center', justifyContent: 'center', width: 30, height: 30, borderRadius: "50" }}>
-                                            <AnimatedCircularProgress
+                                            {/* <AnimatedCircularProgress
                                                 size={33}
                                                 width={4}
                                                 fill={70}
                                                 tintColor="#00e0ff"
-                                                backgroundColor="#3d5875" />
+                                                backgroundColor="#3d5875" /> */}
                                             <Text style={{ position: "absolute", fontSize: 10, fontWeight: 'bold' }}>70%</Text>
                                         </View>
                                     </View>

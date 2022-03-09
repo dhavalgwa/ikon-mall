@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, TouchableOpacity, Modal, Text } from 'react-native';
 import { Searchbar } from 'react-native-paper';
-// import { Octicons } from '@expo/vector-icons';
+// import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 // import { Color } from "../../constant/Constant";
 import Styles from './indexStyle';
 import Filter from "../Filter/index";
@@ -28,7 +28,7 @@ const SearchBar = (props) => {
                 {
                     !searchQuery && props.filter == true ? (
                         <TouchableOpacity style={Styles.iconView} onPress={openModal} >
-                            {/* <Octicons style={Styles.icon} name="settings" color={Color.darkWiteColor}/> */}
+                            {/* <MaterialIcons style={Styles.icon} name="settings-input-component" color={Color.darkWiteColor}/> */}
                         </TouchableOpacity>
                     ) : null
                 }

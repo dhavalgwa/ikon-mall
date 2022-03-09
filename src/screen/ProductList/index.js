@@ -98,7 +98,6 @@ export default connect(({ fetchData }) => ({
 const styles = StyleSheet.create({
     gridView: {
         marginTop: 10,
-       // flex: 1,
         margin:5,
     
     },

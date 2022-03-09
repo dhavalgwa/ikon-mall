@@ -89,6 +89,23 @@ const Styles = StyleSheet.create({
     timeText: {
         color: 'white',
         fontSize: 20
+    },
+    itemImage: {
+        height: 100, 
+        width: 100
+    },
+    noImage: {
+        height: 120, 
+        width: 120
+    },
+    nameText: {
+        fontWeight: 'bold', 
+        fontSize: 15, 
+        width: '90%', 
+        paddingLeft: 5
+    },
+    linearBackground: {
+        height: 49
     }
 })
 
