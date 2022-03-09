@@ -48,13 +48,11 @@ const ShopList = (props) => {
                                         <Text style={{ color: Color.darkWiteColor, fontSize: 10, }}>{shopData.desc}</Text>
                                     </View>
                                 </View>
-
-
                                 <LinearGradient
                                     start={{ x: 0, y: 0 }}
                                     end={{ x: 1, y: 0 }}
                                     colors={["#4E6CFF", "#7B9AFF"]}
-                                    style={{ height: 49 }}
+                                    style={Styles.bottomLinear}
                                 >
                                     <View style={Styles.timeView}>
                                         <Ionicons name="time" size={15} color={"white"} />

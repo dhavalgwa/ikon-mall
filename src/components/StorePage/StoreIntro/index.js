@@ -24,7 +24,7 @@ const StoreIntro = (props) => {
     function open(str, index, stringToAdd) {
         return str.substring(0, index) + stringToAdd + str.substring(index, str.length);
     }
-    var str = props.Data.openTime.toString();
+    var str = props.Data.open.toString();
     let stringToAdd = ":";
     const openTime = open(str, str.length == 4 ? 2 : 1, stringToAdd);
 
@@ -33,7 +33,7 @@ const StoreIntro = (props) => {
     function close(string, index, stringToAdd) {
         return string.substring(0, index) + stringToAdd + string.substring(index, string.length);
     }
-    let string = props.Data.closeTime.toString();
+    let string = props.Data.close.toString();
     let Add = ":";
     const closeTime = close(string, string.length == 4 ? 2 : 1, Add);
 
@@ -47,7 +47,7 @@ const StoreIntro = (props) => {
                     <View style={Styles.nameLabelView}>
                         <View style={Styles.imageView}>
                             <TouchableOpacity>
-                                <Image source={{ uri: props.Data.shopLogo }} style={Styles.bgImage} />
+                                <Image source={{ uri: props.Data.logo }} style={Styles.bgImage} />
                             </TouchableOpacity>
                         </View>
                         <View style={Styles.descriptionView}>
