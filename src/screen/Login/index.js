@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, Image, TextInput, TouchableOpacity, BackHandler, ScrollView, Alert } from 'react-native';
 import Styles from './indexStyle';
-// import { FontAwesome5 } from '@expo/vector-icons';
-// import { Feather } from '@expo/vector-icons';
 import LinearGradient from 'react-native-linear-gradient';
-// import { Foundation } from '@expo/vector-icons';
-// import { AntDesign } from '@expo/vector-icons';
+import Icon from 'react-native-vector-icons/Feather';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { connect } from "react-redux";
 import { useToast } from 'react-native-paper-toast';
+
 
 
 const Login = (props) => {
@@ -49,7 +48,7 @@ const Login = (props) => {
             toaster.show({ type: "error", message: 'Invalid Email!!!', position: "bottom" })
             return false
         }
-        else if (password !== '123456') {
+        else if (password !== '123') {
             toaster.show({ type: "error", message: 'Invalid Password!!', position: "bottom" })
             return false;
         }
@@ -75,7 +74,7 @@ const Login = (props) => {
                 <View style={Styles.inputView}>
                     <Text style={Styles.emailText} >Email</Text>
 
-                    <View style={{ flexDirection: "row", justifyContent: "space-between", borderBottomWidth: 1, borderColor: "#e3e6e8" }}>
+                    <View style={Styles.InputView1}>
                         <TextInput
                             placeholder="example@gmail.com"
                             autoFocus={true}
@@ -85,102 +84,83 @@ const Login = (props) => {
                             value={email}
                         />
                         {(email.match(regexEmail)) ? (<View>
-                            <View style={{ backgroundColor: "#4E6CFF", height: 22, width: 22, borderRadius: 50 }}></View>
-                            {/* <Feather style={{ position: "absolute" }} name="check" size={20} color="white" /> */}
-                        </View>) : null
-                        }
+                            <FontAwesome name="check" size={20} color="#000000 " />
 
+                        </View>
+                        ) : null}
                     </View>
 
                     <Text style={Styles.passText} >Password</Text>
-                    <View style={{ flexDirection: "row", justifyContent: "space-between", borderBottomWidth: 1, borderColor: "#e3e6e8" }}>
+                    <View style={Styles.InputView1}>
                         <TextInput
                             placeholder="**************"
+                            autoFocus={true}
                             secureTextEntry={showpassword}
                             onChangeText={(text) => {
                                 setPassword(text);
                             }}
                             value={password}
+                            
                         />
-                        {passwordValue.length == 6 ? (<TouchableOpacity onPress={() => setShowpassword(!showpassword)}><View>
-                            <View style={{ backgroundColor: "#4E6CFF", height: 22, width: 22, borderRadius: 50 }}></View>
-                            {/* <Feather style={{ position: "absolute" }} name="check" size={20} color="white" /> */}
-                        </View></TouchableOpacity>) : null}
+                        {passwordValue.length == 0 ? (null) : (<TouchableOpacity onPress={() => setShowpassword(!showpassword)}><View>
+                            <FontAwesome name="check" size={20} color="#000000 " />
+
+                        </View></TouchableOpacity>)}
 
                     </View>
-                </View >
-                <LinearGradient
-                    start={{ x: 0, y: 0 }}
-                    end={{ x: 1, y: 0 }}
-                    colors={["#4E6CFF", "#7B9AFF"]}
-                    style={{ height: 49 }}
-                >
-                    <TouchableOpacity style={{ flex: 1, alignItems: "center", justifyContent: "center" }} onPress={goToDashboard}>
-                        <Text style={{ fontSize: 25, fontWeight: "700", color: "#FFFFFF" }}>Login</Text>
+                </View>
+                <LinearGradient style={Styles.LinearGradientButton}
+                    start={{ x: 0.0, y: 0.5 }}
+                    end={{ x: 0.5, y: 1.0 }}
+                    locations={[0, 1]}
+                    colors={['#4E6CFF', '#7B9AFF']}>
+
+                    <TouchableOpacity style={Styles.loginButton1} onPress={goToDashboard}>
+                        <Text style={Styles.loginButton1Text}>Login</Text>
                     </TouchableOpacity>
                 </LinearGradient>
-                <View style={{ flexDirection: 'row', alignItems: 'center', width: "89%", marginTop: 10 }}>
-                    <View style={{ flex: 1, borderBottomWidth: 1, borderColor: "#e3e6e8" }} />
+                <View style={Styles.orView}>
+                    <View style={Styles.orViewBorder} />
                     <View>
-                        <Text style={{ width: 25, textAlign: 'center', fontWeight: "bold" }}>or</Text>
+                        <Text style={Styles.orViewText}>or</Text>
                     </View>
-                    <View style={{ flex: 1, borderBottomWidth: 1, borderColor: "#e3e6e8" }} />
+                    <View style={Styles.orViewBorder} />
                 </View>
                 <View>
                 </View>
-                <View style={{ borderBottomWidth: 1, borderColor: "e3e6e8" }}>
+                <View style={Styles.BorderbottomOr}>
 
                 </View>
-                <View style={{ flexDirection: 'row', width: '90%', alignItems: 'center', justifyContent: 'space-evenly', marginTop: 10, paddingTop: 20, paddingBottom: 20 }}>
-                    {/* <TouchableOpacity>
-                        <FontAwesome5 name="facebook" size={40} color="#3B5998" />
-                    </TouchableOpacity> */}
-                    <TouchableOpacity>
-                        <Image style={{ height: 40, width: 40 }} source={require('../../assets/Images/google.png')} />
-                    </TouchableOpacity>
-                    {/* <TouchableOpacity>
-                        <Foundation size={50} color="black" name="social-apple" />
-                    </TouchableOpacity> */}
-                </View>
-                {/* <View style={{ height: "9%", width: "100%", borderRadius: 25, marginTop: 10,alignItems: 'center', justifyContent: 'center' }}>
-                    <View style={{ alignItems: "center", justifyContent: "center", flexDirection: "row", justifyContent: 'space-between', width: "90%", backgroundColor: 'red' }}>
+                <View style={Styles.IconConteniar}>
+                    <View style={Styles.IconConteniar2}>
                         <View>
-                            <TouchableOpacity style={{ height: 50, width: 50, backgroundColor: "white", borderRadius: 25, }}>
-                                <FontAwesome5 style={{ borderRadius: 20, marginLeft: 4.5, marginTop: 2.7 }} name="facebook" size={40} color="#3B5998" />
+                            <TouchableOpacity style={Styles.FaceBookView}>
+
+                                <Icon style={Styles.FaceBookIcon} name="facebook" size={30} color="#3B5998" />
                             </TouchableOpacity>
                         </View>
-                        <View style={{ display: "flex", justifyContent: "space-between", flexDirection: "row", width: "55%", marginRight: 22 }}>
-                            <TouchableOpacity>
-                                <View style={{ height: 50, width: 50, backgroundColor: "white", borderRadius: 25 }}>
-                                </View>
-                                <Image style={{ height: 40, width: 40, position: "absolute", marginLeft: 5, marginTop: 5 }} source={require('../../assets/Images/google.png')} />
-                            </TouchableOpacity>
-                            <TouchableOpacity>
-                                <View style={{ height: 55, width: 55, backgroundColor: "white", borderRadius: 25, justifyContent: "center", alignContent: "center" }}>
-                                </View>
-                                <Foundation style={{ borderRadius: 20, position: "absolute", marginLeft: 9, marginTop: 2 }} size={50} color="black" name="social-apple" />
+                        <View style={Styles.SubIconView}>
+
+
+                             <TouchableOpacity style={Styles.Google}>
+
+                                <Image style={Styles.googleImage} source={require('../../assets/Images/google.png')} />
+                            </TouchableOpacity> 
+                            <TouchableOpacity style={Styles.apple}>
+                              
+                                <FontAwesome name="apple" size={30} color="#000000 " />
                             </TouchableOpacity>
                         </View>
                     </View>
-                </View> */}
-                <View style={{ marginTop: 10 }}>
+                </View>
+                <View style={Styles.signInButton}>
                     <TouchableOpacity onPress={goToSignIn}>
-                        <Text style={{ color: "#516FFF", fontSize: 14 }}>Create New Account</Text>
+                        <Text style={Styles.signInText}>Create New Account</Text>
                     </TouchableOpacity>
                 </View>
-            </View >
+            </View>
         </ScrollView >
     )
 }
 
-Login.propTypes = {};
-Login.defaultProps = {};
-
-const actionCreators = {};
-
-export default connect(
-    ({ fetchData }) => ({
-        fetchData,
-    }),
-    actionCreators
-)(Login);
+export default Login;

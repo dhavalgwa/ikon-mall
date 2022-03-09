@@ -1,15 +1,12 @@
 import { StyleSheet, Dimensions } from 'react-native';
-
 import { Color } from '../../constant/Constant';
 import { Fonts } from '../../constant/Constant';
-
 const height = Dimensions.get("window").height;
 const width = Dimensions.get("screen").width;
 
 const Styles = StyleSheet.create({
     loginContainer: {
         alignItems: 'center',
-        justifyContent: 'center',
         height: height,
         width: width,
     },
@@ -37,7 +34,7 @@ const Styles = StyleSheet.create({
         height: height / 6,
         justifyContent: 'center',
         padding: 10,
-        marginTop: 30
+        // marginTop: 30
     },
     emailText: {
         fontWeight: '600',
@@ -46,13 +43,13 @@ const Styles = StyleSheet.create({
     passText: {
         fontWeight: '600',
         fontSize: Fonts.label,
-        marginTop: 12
+        // marginTop: 12
     },
     Input: {
         height: '30%',
         fontSize: 15
     },
-    
+
     loginButton: {
         justifyContent: 'center',
         width: '100%',
@@ -74,7 +71,7 @@ const Styles = StyleSheet.create({
         width: '80%',
         height: '7%',
         borderRadius: 20
-        
+
     },
     facebookLoginText: {
         color: 'white',
@@ -91,7 +88,6 @@ const Styles = StyleSheet.create({
         flexDirection: 'row',
         width: '100%',
         height: '50%',
-
         justifyContent: 'center',
         alignItems: 'center',
         borderColor: '#E2E2E2',
@@ -99,10 +95,9 @@ const Styles = StyleSheet.create({
         borderRadius: 20
     },
     loginWithApple: {
-        marginTop: 10,
+        // marginTop: 10,
         flexDirection: 'row',
         width: '100%',
-
         justifyContent: 'center',
         alignItems: 'center',
         borderColor: '#E2E2E2',
@@ -118,7 +113,103 @@ const Styles = StyleSheet.create({
         width: width / 1.1,
         height: '17%',
         padding: 10,
-        marginTop: 40,
+        // marginTop: 40,
+    }, InputView1: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        borderBottomWidth: 1,
+        borderColor: "#e3e6e8"
+    },
+    InputIcon: {
+        backgroundColor: "#4E6CFF",
+        height: 22,
+        width: 22,
+        borderRadius: 50
+
+    }, LinearGradientButton: {
+        height: "6%",
+        width: "89%",
+        borderRadius: 25,
+        // marginTop: 20
+
+    }, loginButton1: {
+        flex: 1,
+        alignItems: "center",
+        justifyContent: "center"
+    }, loginButton1Text: {
+        fontSize: 14,
+        fontWeight: "700",
+        color: "#FFFFFF"
+    }, orView: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        width: "89%",
+        // marginTop: 10
+
+    }, orViewBorder: {
+        flex: 1,
+        borderBottomWidth: 1,
+        borderColor: "#e3e6e8"
+    }, orViewText: {
+        width: 25,
+        textAlign: 'center',
+        fontWeight: "bold"
+
+    }, BorderbottomOr: {
+        borderBottomWidth: 1,
+        borderColor: "#e3e6e8"
+    }, IconConteniar: {
+        height: "9%",
+        width: "65%",
+        borderRadius: 25,
+        // marginTop: 10,
+
+    }, IconConteniar2: {
+        flex: 1,
+        alignItems: "center",
+        flexDirection: "row",
+        justifyContent: 'space-between',
+        width: "100%",
+
+    }, FaceBookView: {
+        height: 50,
+        width: 50,
+        backgroundColor: "#3B5998",
+        borderRadius: 50,
+        justifyContent: 'center',
+        alignItems: 'center'
+
+    }, FaceBookIcon: {
+        borderRadius: 100,
+    }, SubIconView: {
+        display: "flex",
+        justifyContent: "space-between",
+        flexDirection: "row",
+        width: "60%",
+    }, Google: {
+        height: 50,
+        width: 50,
+        backgroundColor: "white",
+        borderRadius: 40,
+        justifyContent: 'center',
+        alignItems: 'center'
+    }, googleImage: {
+        height: 40,
+        width: 40,
+    }, apple: {
+        height: 50,
+        width: 50,
+        backgroundColor: "white",
+        borderRadius: 40,
+        justifyContent: 'center',
+        alignItems: 'center'
+    }, appleIcon: {
+        borderRadius: 20,
+    }, signInButton: {
+        // marginTop: 10
+    }, signInText: {
+        color: "#516FFF",
+        fontSize: 14
     }
 })
 
