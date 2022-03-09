@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, Image, TextInput, TouchableOpacity, BackHandler, ScrollView, Alert } from 'react-native';
 import Styles from './indexStyle';
-import { Feather } from '@expo/vector-icons';
+// import { Feather } from '@expo/vector-icons';
 import LinearGradient from 'react-native-linear-gradient';
-import { Checkbox } from 'react-native-paper';
-import { Ionicons } from '@expo/vector-icons';
+// import { Checkbox } from 'react-native-paper';
+// import { Ionicons } from '@expo/vector-icons';
 import { useToast } from 'react-native-paper-toast';
 
 
