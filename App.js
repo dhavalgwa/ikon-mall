@@ -1,24 +1,24 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Provider as PaperProvider } from 'react-native-paper';
+import { initialWindowMetrics, SafeAreaProvider } from 'react-native-safe-area-context';
+import { ToastProvider } from 'react-native-paper-toast';
 import { NavigationContainer } from '@react-navigation/native';
-
-import StackNavigation from './src/Navigation/StackNavigation/indexStackNavigation';
+import { Provider } from 'react-redux';
+import store from './src/redux/store/index';
+import Navigation from './src/Navigation/StackNavigation/index';
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <SafeAreaProvider initialMetrics={initialWindowMetrics}>
       <NavigationContainer>
-        <StackNavigation />
+        <PaperProvider>
+          <ToastProvider>
+            <Provider store={store}>
+              <Navigation />
+            </Provider>
+          </ToastProvider>
+        </PaperProvider>
       </NavigationContainer>
-    </View>
+    </SafeAreaProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
