@@ -20,7 +20,7 @@ const Styles = StyleSheet.create({
     iconView: {
         width: width,
         alignItems: 'center',
-        height: height /4,
+        height: height / 4,
         justifyContent: 'center',
     },
     welcomeText: {
@@ -33,7 +33,7 @@ const Styles = StyleSheet.create({
     },
     inputView: {
         width: width / 1.1,
-        height: height/2.1,
+        height: height / 2.1,
         justifyContent: 'center',
         padding: 10,
         marginTop: 30
@@ -51,7 +51,7 @@ const Styles = StyleSheet.create({
         height: '30%',
         fontSize: 15
     },
-   
+
     loginButton: {
         backgroundColor: Color.primary,
         justifyContent: 'center',
@@ -114,6 +114,31 @@ const Styles = StyleSheet.create({
         height: height / 7,
         padding: 10,
         marginTop: 40,
+    }, welcomeTextSignUp: {
+        fontSize: 20, fontWeight: "400", color: "#000000"
+    }, welcomeTextAccount: {
+        color: "#666666"
+
+    }, label: {
+        fontSize: 16, fontWeight: "400", marginTop: 10
+    }, InputContener: {
+        flexDirection: "row", justifyContent: "space-between", borderBottomWidth: 1, marginTop: 7
+    }, Input1: {
+        paddingBottom: 7
+    }, userNameicon: {
+        backgroundColor: "#4E6CFF", height: 22, width: 22, borderRadius: 50,
+    }, Checkbox: {
+        marginTop: 10, width: '100%', position: 'relative'
+    }, CheckBoxTextView: {
+        position: "absolute", paddingLeft: 40, top: 6
+    }, CheckBoxText: {
+        color: "#AAAAAA", flexWrap: "wrap", position: 'relative'
+    }, LinearGradientButton: {
+        height: "6%", width: "89%", borderRadius: 25, marginTop: 45
+    }, Signup: {
+        flex: 1, alignItems: "center", justifyContent: "center"
+    }, SignupText: {
+        fontSize: 14, fontWeight: "700", color: "#FFFFFF"
     }
 })
 
