@@ -73,6 +73,10 @@ const storePageStyles = StyleSheet.create({
         color: Color.linkColor,
         marginTop: 7,
         paddingRight: 10
+    },image:{
+        height: 100, width: 100
+    },conternair:{
+        alignItems: 'center' 
     }
 });
 

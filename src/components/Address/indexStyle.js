@@ -8,8 +8,8 @@ const Styles = StyleSheet.create({
         justifyContent: 'center',
         marginTop: 5,
         marginBottom: 5,
-        paddingLeft:10,
-        paddingRight:15
+        paddingLeft: 10,
+        paddingRight: 15
 
     },
     addressView: {
@@ -17,7 +17,7 @@ const Styles = StyleSheet.create({
         width: '100%',
         alignItems: 'center',
         justifyContent: 'space-between',
-       
+
     },
     locationIcon: {
         backgroundColor: "#FFFFFF",
@@ -38,7 +38,7 @@ const Styles = StyleSheet.create({
     text: {
         color: "white",
         fontWeight: '300',
-        fontSize:10
+        fontSize: 10
     },
     changeButton: {
         backgroundColor: '#FFFFFF',
@@ -50,8 +50,10 @@ const Styles = StyleSheet.create({
     },
     btnText: {
         color: '#064883',
-        fontWeight:"bold",
-        fontSize:13
+        fontWeight: "bold",
+        fontSize: 13
+    }, image: {
+        height: 23, width: 20
     }
 });
 

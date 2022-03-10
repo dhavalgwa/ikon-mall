@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, Image, ScrollView, TouchableOpacity } from 'react-native';
-
+import Styles from "./indexStyle";
 import Data from '../../../data/data';
 import { Card } from "react-native-paper";
 import { connect } from "react-redux";
@@ -17,30 +17,30 @@ const ShopLists = () => {
             {
                 shopData.map((d, id) => {
                     return (
-                        <View key={id} style={{ marginTop: 10 }}>
-                            <Card style={{ height: 210, width: 170, borderRadius: 20, marginLeft: 15 }}>
+                        <View key={id} style={Styles.contener}>
+                            <Card style={Styles.cardContener}>
                                 <View>
-                                    <TouchableOpacity style={{ display: "flex", justifyContent: "space-between" }}>
-                                        <Image style={{ height: 105, width: 170, position: "relative", borderTopLeftRadius: 10, borderTopRightRadius: 10 }} source={d.image} />
-                                        <View style={{ position: "absolute", height: "100%", width: "100%", display: "flex", justifyContent: "flex-end", alignItems: "flex-end" }}>
-                                            <Text style={{ color: "white", fontWeight: 'bold' }}>8:00 - 18:00</Text>
+                                    <TouchableOpacity style={Styles.ImageView}>
+                                        <Image style={Styles.Image} source={d.image} /> 
+                                        <View style={Styles.timeTextcontener}>
+                                            <Text style={Styles.timeText1}>8:00 - 18:00</Text>
                                         </View>
                                     </TouchableOpacity>
-                                    <View style={{ position: "absolute", height: "100%", width: "100%", display: "flex", justifyContent: "flex-end", alignItems: "baseline" }}>
-                                        <Image source={d.logo} style={{ height: 35, width: 35, left: 15, top: 12 }} />
+                                    <View style={Styles.logoView}>
+                                        <Image source={d.logo} style={Styles.logo} />
                                     </View>
                                 </View>
-                                <View style={{ marginTop: 10, height: 105, width: "100%", display: "flex", backgroundColor: " #F3F3F0", borderBottomLeftRadius: 10, borderBottomRightRadius: 10 }}>
-                                    <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: 10 }}>
-                                        <Text style={{ justifyContent: "flex-start", alignItems: "baseline", marginLeft: 13, fontWeight: "bold" }} >{d.shopName}</Text>
-                                        <View style={{ flexDirection: "row", justifyContent: "space-evenly" }}>
-                                            <Image style={{ height: 20, width: 20, bottom: 2 }} source={require('../../../assets/Images/reting.png')} />
+                                <View style={Styles.shopNameContenaer}>
+                                    <View style={Styles.shopnamesubContener}>
+                                        <Text style={Styles.ShopNameText} >{d.shopName}</Text>
+                                        <View style={Styles.RatingsContener}>
+                                            <Image style={Styles.ratingsImage} source={require('../../../assets/Images/reting.png')} />
                                             <Text>{d.Ratings}</Text>
                                         </View>
                                     </View>
-                                    <View style={{ display: "flex", flexDirection: "row", marginTop: 10 }}>
-                                        <Image style={{ height: 20, width: 20, marginLeft: 10 }} source={require('../../../assets/Images/loce.png')} />
-                                        <Text style={{ marginLeft: 10, width: "75%" }}>{d.address}</Text>
+                                    <View style={Styles.addressConter}>
+                                        <Image style={Styles.addressImage} source={require('../../../assets/Images/loce.png')} />
+                                        <Text style={Styles.addressText}>{d.address}</Text>
                                     </View>
                                 </View>
                             </Card>

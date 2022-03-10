@@ -8,7 +8,6 @@ import { connect } from "react-redux";
 import { useToast } from 'react-native-paper-toast';
 
 
-
 const Login = (props) => {
     const toaster = useToast();
     const [email, setEmail] = useState('');

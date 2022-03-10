@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
-
+import Styles from "./indexStyle";
 
 const NotificationCard = (props) => {
 
@@ -9,7 +9,7 @@ const NotificationCard = (props) => {
         <View>
             {
                 props?.showHide ? (
-                    <View style={{ backgroundColor: 'white', justifyContent: 'space-between', margin: 10, flexDirection: 'row' }}>
+                    <View style={Styles.NotificationCard}>
                         <View>
                             <Text>{props.cardData.name}</Text>
                             <Text>{props.cardData.Time}</Text>
