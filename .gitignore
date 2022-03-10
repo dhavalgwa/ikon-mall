@@ -243,3 +243,4 @@ artifacts/
 Mock*
 android/app/src/main/res/raw/
 android/app/src/main/res/raw/node_modules_expo_vectoricons_build_vendor_reactnativevectoricons_glyphmaps_fontawesome5free.json
+android/app/src/main/res/raw/node_modules_expo_vectoricons_build_vendor_reactnativevectoricons_glyphmaps_fontawesome.json
