@@ -6,8 +6,8 @@ const Styles = StyleSheet.create({
     },
     shopCardView: {
         borderRadius: 10,
-        borderTopLeftRadius: 15,
-        borderTopRightRadius: 15,
+        borderTopLeftRadius: 10,
+        borderTopRightRadius: 10,
         width: 180
     },
     imageView: {
@@ -51,6 +51,11 @@ const Styles = StyleSheet.create({
         fontSize: 10,
         fontWeight: 'bold',
         color:'white'
+    },
+    bottomLinear: {
+        height: 49, 
+        borderBottomLeftRadius: 10, 
+        borderBottomRightRadius: 10
     }
 })
 
