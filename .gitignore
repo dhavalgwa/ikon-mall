@@ -146,6 +146,9 @@ fastlane/screenshots
 *.class
 
 # Generated files
+android/
+
+# Generated files
 android/bin/
 android/gen/
 android/out/
