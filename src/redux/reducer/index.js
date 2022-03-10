@@ -1,8 +1,10 @@
-import fetchData from './getUserData';
+import fetchData from './user';
+import shop from './shop';
 import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({
-    fetchData
+    fetchData,
+    shop,
 })
 
 export default rootReducer;

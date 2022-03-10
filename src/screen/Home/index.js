@@ -11,17 +11,19 @@ import ShopList from '../../components/Shops/index';
 import ShopCard from '../../components/ShopCard/index';
 import SearchBar from '../../components/SearchBar/index';
 import Header from '../../components/header/index';
+import Loader from '../../components/Loader/LoaderIndex';
+import LabelView from '../../components/lableView/LableIndex';
 
 import {
     allShopDataCategoryWise,
     setDashboardData,
     setFilter,
-    setShopData,
     ProductCategory,
 } from '../../redux/action/index';
+import { setShopData } from '../../redux/action/shop';
 
 const HomePage = (props) => {
-
+    console.log("props.shopList ::", props.shopList);
     useEffect(() => {
         props.ProductCategory();
         props.allShopDataCategoryWise();
@@ -60,51 +62,40 @@ const HomePage = (props) => {
                     colors={["#4E6CFF", "#7B9AFF"]}
                     style={{ height: 49 }}
                 >
-                    <Address navigate={navigate}/>
+                    <Address navigate={navigate} />
                 </LinearGradient>
                 <View style={Styles.searchView}>
                     <SearchBar filter={false} />
                 </View>
-                <View style={Styles.choseShopContainer}>
-                    <View style={Styles.choseShopView}>
-                        <Text style={Styles.choseShopeText} >Choose your shop</Text>
-                        <TouchableOpacity onPress={navigate}>
-                            <Text style={Styles.ViewAllText}>View all</Text>
-                        </TouchableOpacity>
-                    </View>
+                <View>
+                    <LabelView navigate={navigate} />
                 </View>
                 <View style={Styles.shopListContainer}>
                     <View style={Styles.shopListView}>
                         {
-                            props.fetchData.shopData.data == undefined ? (
-                                <View style={{ alignItems: 'center' }}>
-                                    <Image source={require('../../assets/Images/Loader/Loading.gif')} style={Styles.loaderImage} />
-                                </View>
+                            props.isLoader ? (
+                                <Loader  text={"Loading Shops"} image={"https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/200.gif"} />
                             ) : (
-                                <ShopList navData={props.navigation} data={props.fetchData.shopData.data} />
+                                <ShopList navData={props.navigation} data={props.shopList} />
                             )
                         }
                     </View>
                 </View>
-                <View style={Styles.categoryView}>
+                {/* <View style={Styles.categoryView}>
                     {
                         props.fetchData.homeCategoryData.data == undefined ? (
-                            <View style={{ alignItems: 'center' }}>
-                                <Image source={require('../../assets/Images/Loader/Loading.gif')} style={Styles.loaderImage} />
-                            </View>
+                          <Loader />
                         ) : (
                             <Category navigate={navigate} data={props.fetchData.homeCategoryData.data} />
                         )
                     }
-                </View>
+                </View> */}
                 <View style={Styles.shopCardView}>
                     {
-                        props.fetchData.shopData.data == undefined ? (
-                            <View style={{ alignItems: 'center' }}>
-                                <Image source={require('../../assets/Images/Loader/Loading.gif')} style={Styles.loaderImage} />
-                            </View>
+                        props.isLoader ? (
+                            <Loader text={"Loading Shops"} image={"https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/200.gif"} />
                         ) : (
-                            <ShopCard navData={props.navigation} data={props.fetchData.shopData.data} />
+                            <ShopCard navData={props.navigation} data={props.shopList} />
                         )
                     }
                 </View>
@@ -121,6 +112,7 @@ const mapDispatchToProps = {
     ProductCategory,
 };
 
-export default connect(({ fetchData }) => ({
-    fetchData,
+export default connect(({ shop }) => ({
+    shopList: shop.shopsList,
+    isLoader: shop.loading
 }), mapDispatchToProps)(HomePage);

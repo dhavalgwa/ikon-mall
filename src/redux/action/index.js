@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import {
     DASHBOARD,
-    SHOPDATA,
+    // SHOPDATA,
     SHOP_CART_CATEGORY_DATA,
     CATEGORYID,
     SHOPDATACATWISE,
@@ -58,24 +58,24 @@ export const setDashboardData = () => {
     }
 }
 
-export const setShopData = () => {
-    return (dispatch) => {
-        axios.get(`${api}/shop`, {
-            params: {
-                skip: 0,
-                limit: 10
-            }
-        }).then(res => {
-            dispatch({
-                type: SHOPDATA,
-                payload: res.data
-            });
-        }).catch(err => {
-            console.log("err setShopData :: ", err);
-        });
+// export const setShopData = () => {
+//     return (dispatch) => {
+//         axios.get(`${api}/shop`, {
+//             params: {
+//                 skip: 0,
+//                 limit: 10
+//             }
+//         }).then(res => {
+//             dispatch({
+//                 type: SHOPDATA,
+//                 payload: res.data
+//             });
+//         }).catch(err => {
+//             console.log("err setShopData :: ", err);
+//         });
 
-    }
-}
+//     }
+// }
 
 export const setShopByCategoryData = (categoryId) => {
     return (dispatch) => {

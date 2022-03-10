@@ -97,9 +97,8 @@ const StoreIntro = (props) => {
                         </View>
                     </LinearGradient>
                 </View>
-
             </View>
-        </View >
+        </View>
     )
 }
 
