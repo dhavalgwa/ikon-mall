@@ -45,10 +45,6 @@ const HomePage = (props) => {
     const navigate = () => {
         props.navigation.navigate('Development');
     }
-    const Map = () => {
-        props.navigation.navigate('Map');
-
-    }
     return (
         <SafeAreaView>
             <ScrollView
@@ -82,7 +78,7 @@ const HomePage = (props) => {
                         {
                             props.fetchData.shopData.data == undefined ? (
                                 <View style={{ alignItems: 'center' }}>
-                                    <Image source={require('../../assets/Images/Loader/Loading.gif')} style={{ height: 100, width: 100 }} />
+                                    <Image source={require('../../assets/Images/Loader/Loading.gif')} style={Styles.loaderImage} />
                                 </View>
                             ) : (
                                 <ShopList navData={props.navigation} data={props.fetchData.shopData.data} />
@@ -94,7 +90,7 @@ const HomePage = (props) => {
                     {
                         props.fetchData.homeCategoryData.data == undefined ? (
                             <View style={{ alignItems: 'center' }}>
-                                <Image source={require('../../assets/Images/Loader/Loading.gif')} style={{ height: 100, width: 100 }} />
+                                <Image source={require('../../assets/Images/Loader/Loading.gif')} style={Styles.loaderImage} />
                             </View>
                         ) : (
                             <Category navigate={navigate} data={props.fetchData.homeCategoryData.data} />
@@ -105,7 +101,7 @@ const HomePage = (props) => {
                     {
                         props.fetchData.shopData.data == undefined ? (
                             <View style={{ alignItems: 'center' }}>
-                                <Image source={require('../../assets/Images/Loader/Loading.gif')} style={{ height: 100, width: 100 }} />
+                                <Image source={require('../../assets/Images/Loader/Loading.gif')} style={Styles.loaderImage} />
                             </View>
                         ) : (
                             <ShopCard navData={props.navigation} data={props.fetchData.shopData.data} />

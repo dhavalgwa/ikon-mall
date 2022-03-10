@@ -36,6 +36,8 @@ const Login = (props) => {
         props.navigation.navigate('Signup')
     }
     const goToDashboard = () => {
+        toaster.show({ type: "success", message: ' login SuccessFully...', position: "bottom" })
+        props.navigation.navigate('BottomTabNavigation');
         if (!email) {
             toaster.show({ type: "error", message: "Email Can not Blank!!", position: "bottom" })
             return false;

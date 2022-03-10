@@ -66,7 +66,6 @@ const Styles = StyleSheet.create({
         width: '30%',
         alignItems: 'flex-end',
         justifyContent: 'center',
-        // backgroundColor: "#E8FCFC"
     },
     notiFication: {
         backgroundColor: 'white',
@@ -117,6 +116,19 @@ const Styles = StyleSheet.create({
         width: '40%',
         justifyContent: 'space-evenly',
         alignItems: 'center'
+    },
+    linearBackground: {
+        height: 49
+    },
+    marketInfoText: {
+        color: "white", 
+        fontWeight: "500", 
+        fontSize: 14
+    },
+    orderText: {
+        color: "white", 
+        fontWeight: "500", 
+        fontSize: 14
     }
 });
 

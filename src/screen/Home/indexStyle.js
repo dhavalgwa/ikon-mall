@@ -62,6 +62,10 @@ const Styles = StyleSheet.create({
         margin: 2,
         marginLeft:10,
         marginRight:10
+    },
+    loaderImage: {
+        height: 100, 
+        width: 100
     }
 });
 

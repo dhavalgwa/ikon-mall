@@ -83,16 +83,16 @@ const StoreIntro = (props) => {
                         start={{ x: 0, y: 0 }}
                         end={{ x: 1, y: 0 }}
                         colors={["#4E6CFF", "#7B9AFF"]}
-                        style={{ height: 49 }}
+                        style={Styles.linearBackground}
                     >
                         <View style={Styles.marketInfoOrderProcessView}>
                             <TouchableOpacity onPress={goToMarketInfo} style={Styles.marketInfoView}>
                                 <Foundation name="info" size={24} color={"white"} />
-                                <Text style={{ color: "white", fontWeight: "500", fontSize: 14 }}>Market info</Text>
+                                <Text style={Styles.marketInfoText}>Market info</Text>
                             </TouchableOpacity>
                             <TouchableOpacity style={Styles.marketInfoView}>
                                 <Ionicons name="md-location-sharp" size={24} color={"white"} />
-                                <Text style={{ color: "white", fontWeight: "500", fontSize: 14 }}>Order in process</Text>
+                                <Text style={Styles.orderText}>Order in process</Text>
                             </TouchableOpacity>
                         </View>
                     </LinearGradient>

@@ -6,8 +6,6 @@ import LinearGradient from 'react-native-linear-gradient';
 // import { Checkbox } from 'react-native-paper';
 // import { Ionicons } from '@expo/vector-icons';
 import { useToast } from 'react-native-paper-toast';
-
-
 const Signup = (props) => {
     const toaster = useToast();
     const [email, setEmail] = useState('');
@@ -35,28 +33,25 @@ const Signup = (props) => {
         if (!email) {
             toaster.show({ type: "error", message: "Email Can not Blank!!", position: "bottom" })
             return false;
-
         } else if (!password) {
             toaster.show({ type: "error", message: "Password Can not blank!!", position: "bottom" })
             return false;
-
         } else if (!Cpassword) {
             toaster.show({ type: "error", message: "Password Can not blank!!", position: "bottom" })
             return false;
         }
-
-        // else if (email !== 'developer@gmail.com') {
-        //     toaster.show({ type:"error",message: "'Invalid Email!!!'",position:"bottom" })
-        //     return false
-        // }
-        // else if (password !== '123') {
-        //     toaster.show({ type:"error",message: 'Invalid Password!!',position:"bottom" })
-        //     return false;
-        // }
-        // else if (Cpassword !== '123') {
-        //     toaster.show({ type:"error",message: 'Invalid Password!!',position:"bottom" })
-        //     return false;
-        // }
+        else if (email !== 'developer@gmail.com') {
+            toaster.show({ type: "error", message: "'Invalid Email!!!'", position: "bottom" })
+            return false
+        }
+        else if (password !== '123') {
+            toaster.show({ type: "error", message: 'Invalid Password!!', position: "bottom" })
+            return false;
+        }
+        else if (Cpassword !== '123') {
+            toaster.show({ type: "error", message: 'Invalid Password!!', position: "bottom" })
+            return false;
+        }
         else if (Cpassword !== password) {
             toaster.show({ type: "error", message: "Password not Match!!!", position: "bottom" })
             return false;
@@ -77,13 +72,13 @@ const Signup = (props) => {
                     <Image style={Styles.image} source={require('../../assets/Images/Splash.png')} />
                 </View>
                 <View style={Styles.welcomeText}>
-                    <Text style={{ fontSize: 20, fontWeight: "400", color: "#000000" }} >Sign up</Text>
-                    <Text style={{ color: "#666666" }}>Create an New Account</Text>
+                    <Text style={Styles.welcomeTextSignUp} >Sign up</Text>
+                    <Text style={Styles.welcomeTextAccount}>Create an New Account</Text>
                 </View>
                 <View style={Styles.inputView}>
-                    <Text style={{ fontSize: 16, fontWeight: "400", marginTop: 10 }} >Username</Text>
-                    <View style={{ flexDirection: "row", justifyContent: "space-between", borderBottomWidth: 1, marginTop: 7 }}>
-                        <TextInput style={{ paddingBottom: 7 }}
+                    <Text style={Styles.label} >Username</Text>
+                    <View style={Styles.InputContener}>
+                        <TextInput style={Styles.Input1}
                             placeholder="example"
                             autoFocus={true}
                             onChangeText={(text) => {
@@ -91,30 +86,29 @@ const Signup = (props) => {
                             }}
                             value={userName}
                         />
-                        {(!userName) ? (null) : (<View>
-                            <View style={{ backgroundColor: "#4E6CFF", height: 22, width: 22, borderRadius: 50, }}></View>
-                            {/* <Feather style={{ position: "absolute" }} name="check" size={20} color="white" /> */}
-                        </View>)}
-
-
+                        {/* {(!userName) ? (null) : (<View>
+                            <View style={Styles.userNameicon}></View>
+                            <Feather style={{ position: "absolute" }} name="check" size={20} color="white" />
+                        </View>)} */}
                     </View>
-                    <Text style={{ fontSize: 16, fontWeight: "400", marginTop: 10 }} >Email</Text>
-                    <View style={{ flexDirection: "row", justifyContent: "space-between", borderBottomWidth: 1, marginTop: 7 }}>
+                    <Text style={Styles.label} >Email</Text>
+                    <View style={Styles.InputContener}>
                         <TextInput
-                            style={{ paddingBottom: 7 }}
+                            style={Styles.Input1}
                             placeholder="example@gmail.com"
+                            autoFocus={true}
                             onChangeText={(text) => {
                                 setEmail(text);
                             }}
                             value={email}
                         />
-
                     </View>
-                    <Text style={{ fontSize: 16, fontWeight: "400", marginTop: 10 }} >Password</Text>
-                    <View style={{ flexDirection: "row", justifyContent: "space-between", borderBottomWidth: 1, marginTop: 7 }}>
+                    <Text style={Styles.label}  >Password</Text>
+                    <View style={Styles.InputContener}>
                         <TextInput
-                            style={{ paddingBottom: 7 }}
+                            style={Styles.Input1}
                             placeholder="**************"
+                            autoFocus={true}
                             secureTextEntry={showpassword}
                             onChangeText={(text) => {
                                 setPassword(text);
@@ -123,30 +117,26 @@ const Signup = (props) => {
                         />
                         {/* {(!password) ? (null) : (<TouchableOpacity>
                             <Ionicons name="eye-off" size={24} color="#4E6CFF" onPress={() => setShowpassword(!showpassword)} />
-
                         </TouchableOpacity>)} */}
-
                     </View>
-                    <Text style={{ fontSize: 16, fontWeight: "400", marginTop: 10 }} >Confirm Password</Text>
-                    <View style={{ flexDirection: "row", justifyContent: "space-between", borderBottomWidth: 1, marginTop: 7 }}>
+                    <Text style={Styles.label}  >Confirm Password</Text>
+                    <View style={Styles.InputContener}>
                         <TextInput
-                            style={{ paddingBottom: 7 }}
+                            style={Styles.Input1}
                             placeholder="**************"
+                            autoFocus={true}
                             secureTextEntry={showcpassword}
                             onChangeText={(text) => {
                                 setCPassword(text);
                             }}
                             value={Cpassword}
                         />
-                        {/* {(!Cpassword) ? (null) : (<TouchableOpacity>
-                            <Ionicons name="eye-off" size={24} color="#4E6CFF" onPress={() => setcShowpassword(!showcpassword)} />
-
+                        {(!Cpassword) ? (null) : (<TouchableOpacity>
+                            {/* <Ionicons name="eye-off" size={24} color="#4E6CFF" onPress={() => setcShowpassword(!showcpassword)} /> */}
                         </TouchableOpacity>)
-                        } */}
-
+                        }
                     </View>
-                    <View style={{ marginTop: 10, width: '100%', position: 'relative' }}>
-
+                    <View style={Styles.Checkbox}>
                         {/* <Checkbox
                             status={checked ? 'checked' : 'unchecked'}
                             onPress={() => {
@@ -155,31 +145,30 @@ const Signup = (props) => {
                             color={'#4E6CFF'}
                             uncheckColor={'red'}
                         /> */}
-
-                        <View style={{ position: "absolute", paddingLeft: 40, top: 6 }}>
-                            <Text style={{ color: "#AAAAAA", flexWrap: "wrap", position: 'relative' }} >
+                        <View style={Styles.CheckBoxTextView}>
+                            <Text style={Styles.CheckBoxText} >
                                 By Creating an  Account you have to agree with our them & condication
                             </Text>
                         </View>
-
                     </View>
                 </View>
-                <LinearGradient
-                    start={{ x: 0, y: 0 }}
-                    end={{ x: 1, y: 0 }}
-                    colors={["#4E6CFF", "#7B9AFF"]}
-                    style={{ height: 49 }}
-                >
-                    <TouchableOpacity style={{ flex: 1, alignItems: "center", justifyContent: "center" }} onPress={goToSucess}>
-                        <Text style={{ fontSize: 14, fontWeight: "700", color: "white" }}>Signup</Text>
+                <LinearGradient style={Styles.LinearGradientButton}
+                    start={{ x: 0.0, y: 0.5 }}
+                    end={{ x: 0.5, y: 1.0 }}
+                    locations={[0, 1]}
+                    colors={['#4E6CFF', '#7B9AFF']}>
+                    <TouchableOpacity style={Styles.Signup} onPress={goToSucess}>
+                        <Text style={Styles.SignupText}>Signup</Text>
                     </TouchableOpacity>
                 </LinearGradient>
-                <View style={{ marginTop: 15 }}>
+                <View >
                     <TouchableOpacity onPress={goToLogin}>
                         <Text style={{ color: "#516FFF", fontSize: 14 }}>Return To Login</Text>
                     </TouchableOpacity>
                 </View>
+
             </View>
+
         </ScrollView >
     )
 }

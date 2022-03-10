@@ -5,6 +5,21 @@ const Styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center'
+    },
+    savingContainer: {
+        height: '100%',
+        width: '100%',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    linearGradient: {
+        height: 50
+    },
+    profileImage: {
+        height: 30, 
+        width: 30, 
+        borderRadius: 20, 
+        resizeMode: 'cover'
     }
 });
 

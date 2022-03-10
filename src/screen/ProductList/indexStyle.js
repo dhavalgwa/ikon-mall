@@ -11,7 +11,28 @@ const Styles = StyleSheet.create({
     lableView: {
         flex: 1, 
         marginLeft: 10, 
-    }
+    },
+    gridView: {
+        marginTop: 10,
+        margin: 5,
+
+    },
+    itemContainer: {
+        justifyContent: 'flex-end',
+        borderRadius: 5,
+        padding: 10,
+        height: 150,
+    },
+    itemName: {
+        fontSize: 16,
+        color: '#fff',
+        fontWeight: '600',
+    },
+    itemCode: {
+        fontWeight: '600',
+        fontSize: 12,
+        color: '#fff',
+    },
 });
 
 export default Styles;
