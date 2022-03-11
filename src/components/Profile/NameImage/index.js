@@ -1,8 +1,7 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity } from 'react-native';
-// import { AntDesign } from '@expo/vector-icons';
 import LinearGradient from 'react-native-linear-gradient';
-import Styles from './indexStyles';
+import Styles from './Styles';
 import { connect } from "react-redux";
 
 const NameImage = (props) => {

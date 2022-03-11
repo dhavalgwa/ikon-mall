@@ -12,7 +12,7 @@ import HomePage from '../../screen/Home/index';
 import Profile from '../../screen/Profile/index';
 import StorePage from '../../screen/StorePage/index';
 // import Saving from '../../screen/Saving/index';
-import Styles from './indexStyle';
+import Styles from './Styles';
 import MyOrder from '../../screen/MyOrder/index';
 
 const Tab = createBottomTabNavigator();

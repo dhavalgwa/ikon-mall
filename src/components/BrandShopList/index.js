@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Text, ScrollView, Image, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 
-import Styles from './indexStyle';
+import Styles from './Styles';
 import { setBrandShopData, setBrandShopId } from '../../redux/action/index';
 
 const BrandShopList = (props) => {

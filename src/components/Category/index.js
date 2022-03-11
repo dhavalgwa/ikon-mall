@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { View, Text, TouchableOpacity, ScrollView, Alert } from 'react-native';
 
 import { connect } from 'react-redux';
-import Styles from './indexStyle';
+import Styles from './Styles';
 import { setCategoryId, productCategoryId, setShopByCategoryData } from '../../redux/action/index';
 
 const Category = (props) => {

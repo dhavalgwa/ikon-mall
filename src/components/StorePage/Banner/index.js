@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, TouchableOpacity, Image, ScrollView } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-import Styles from './indexStyles';
+import Styles from './Styles';
 import { connect } from "react-redux";
 
 const Banner = (props) => {

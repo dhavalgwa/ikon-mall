@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-const Styles = StyleSheet.create({
+const ProductItemCardStyles = StyleSheet.create({
     container: {
         width:'100%',
     },
@@ -92,4 +92,4 @@ const Styles = StyleSheet.create({
     }
 })
 
-export default Styles;
+export default ProductItemCardStyles;

@@ -7,9 +7,6 @@ import { setFilter } from '../../redux/action/index';
 import LinearGradient from 'react-native-linear-gradient';
 import Styles from "./indexStyle";
 
-// import { Entypo } from '@expo/vector-icons';
-// import RangeSlider, { Slider } from 'react-native-range-slider-expo';
-
 const { height } = Dimensions.get('screen');
 const Filter = (props) => {
     const [modalVisible, setModalVisible] = useState(false);

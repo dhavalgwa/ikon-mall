@@ -3,7 +3,7 @@ import { View, TouchableOpacity, Modal, Text } from 'react-native';
 import { Searchbar } from 'react-native-paper';
 // import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 // import { Color } from "../../constant/Constant";
-import Styles from './indexStyle';
+import Styles from './Styles';
 import Filter from "../Filter/index";
 import { connect } from "react-redux";
 

@@ -11,7 +11,7 @@ import Map from "../../screen/Map/index";
 import Notification from '../../screen/StoreInfo/Notification/index';
 import StoreInfo from "../../screen/StoreInfo/index";
 import SignIn from "../../screen/SignIn/index";
-import Styles from './indexStyle';
+import Styles from './Styles';
 import ProductDetail from '../../screen/ProductDetail/index';
 import ProductList from '../../screen/ProductList/index';
 import Login from '../../screen/Login/index';

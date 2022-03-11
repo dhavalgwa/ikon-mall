@@ -4,7 +4,7 @@ import { View, ScrollView, BackHandler, SafeAreaView } from 'react-native';
 import { connect } from 'react-redux';
 import LinearGradient from 'react-native-linear-gradient';
 
-import Styles from './indexStyle';
+import Styles from './Styles';
 import Address from '../../components/Address/index';
 import Category from '../../components/Category/index';
 import ShopList from '../../components/Shops/index';

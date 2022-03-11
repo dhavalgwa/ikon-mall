@@ -3,7 +3,7 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import MarketInfo from "./Market info";
 import DeliveryTime from "./Delivery Times";
 
-import Styles from './indexStyles';
+import Styles from './Styles';
 
 const Tab = createMaterialTopTabNavigator();
 

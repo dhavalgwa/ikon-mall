@@ -4,7 +4,7 @@ import { AntDesign } from '@expo/vector-icons';
 import { connect } from 'react-redux';
 import LinearGradient from 'react-native-linear-gradient';
 import { useToast } from 'react-native-paper-toast';
-import Styles from './indexStyle';
+import Styles from './Styles';
 import { Color } from "../../../constant/Constant";
 import { addToCartProduct, like, setProduct, unLike } from '../../../redux/action/index';
 
