@@ -8,7 +8,6 @@ import { connect } from "react-redux";
 import { useToast } from 'react-native-paper-toast';
 
 
-
 const Login = (props) => {
     const toaster = useToast();
     const [email, setEmail] = useState('');
@@ -36,29 +35,29 @@ const Login = (props) => {
         props.navigation.navigate('Signup')
     }
     const goToDashboard = () => {
-        // props.navigation.navigate('BottomTabNavigation');
-        // if (!email) {
-            //     toaster.show({ type: "error", message: "Email Can not Blank!!", position: "bottom" })
-            //     return false;
-            
-            // } else if (!password) {
-        //     toaster.show({ type: "error", message: "Password Can not blank!!", position: "bottom" })
-        //     return false;
-        // }
-        // else if (email !== 'developer@gmail.com') {
-            //     toaster.show({ type: "error", message: 'Invalid Email!!!', position: "bottom" })
-            //     return false
-            // }
-            // else if (password !== '123') {
-                //     toaster.show({ type: "error", message: 'Invalid Password!!', position: "bottom" })
-                //     return false;
-                // }
-                // else {
-                    //     toaster.show({ type: "success", message: ' login SuccessFully...', position: "bottom" })
-        //     props.navigation.navigate('BottomTabNavigation');
-        // }
+        toaster.show({ type: "success", message: ' login SuccessFully...', position: "bottom" })
         props.navigation.navigate('BottomTabNavigation');
-        toaster.show({ type: "success", message: ' login SuccessFully...', position: "bottom" });
+        if (!email) {
+            toaster.show({ type: "error", message: "Email Can not Blank!!", position: "bottom" })
+            return false;
+
+        } else if (!password) {
+            toaster.show({ type: "error", message: "Password Can not blank!!", position: "bottom" })
+            return false;
+        }
+        else if (email !== 'developer@gmail.com') {
+            toaster.show({ type: "error", message: 'Invalid Email!!!', position: "bottom" })
+            return false
+        }
+        else if (password !== '123') {
+            toaster.show({ type: "error", message: 'Invalid Password!!', position: "bottom" })
+            return false;
+        }
+        else {
+            toaster.show({ type: "success", message: ' login SuccessFully...', position: "bottom" })
+            props.navigation.navigate('BottomTabNavigation');
+        }
+
     }
     return (
         <ScrollView

@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { ScrollView, View, SafeAreaView, TouchableOpacity, Text, BackHandler, Image } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-
 import StoreIntro from '../../components/StorePage/StoreIntro/index';
 import Banner from '../../components/StorePage/Banner/index';
-import Styles from '../../components/Category/Styles';
+import Styles from '../../components/Category/indexStyle';
 import storePageStyles from './indexStyle';
 import ItemCard from '../../components/StorePage/ItemCard/index';
 import { connect } from 'react-redux';
@@ -81,8 +80,8 @@ const StorePage = (props) => {
                                     <View key={id}>
                                         {
                                             item == undefined ? (
-                                                <View style={{ alignItems: 'center' }}>
-                                                    <Image source={require('../../assets/Images/Loader/Loading.gif')} style={{ height: 100, width: 100 }} />
+                                                <View style={Styles.conternair}>
+                                                    <Image source={require('../../assets/Images/Loader/Loading.gif')} style={Styles.image} />
                                                 </View>
                                             ) : (
                                                 <TouchableOpacity onPress={() => categoryActiveColor(id, item.param)} style={[Styles.category, toggle !== item.id ? Styles.disableButtonName : Styles.activeButtonName, item.name.length <= 7 && Styles.minWidth]}>

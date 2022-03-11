@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Image, Text } from 'react-native';
-import Styles from './Styles';
+import Styles from './LoaderStyles';
 
 const Loader = (props) => {
 	return (

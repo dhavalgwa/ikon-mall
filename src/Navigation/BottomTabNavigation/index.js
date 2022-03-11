@@ -11,8 +11,8 @@ import Feather from 'react-native-vector-icons/Feather';
 import HomePage from '../../screen/Home/index';
 import Profile from '../../screen/Profile/index';
 import StorePage from '../../screen/StorePage/index';
-import Saving from '../../screen/Saving/index';
-import Styles from './Styles';
+// import Saving from '../../screen/Saving/index';
+import Styles from './indexStyle';
 import MyOrder from '../../screen/MyOrder/index';
 
 const Tab = createBottomTabNavigator();
@@ -22,6 +22,14 @@ const BottomTabNavigation = () => {
 
     const setTabName = (tabName) => {
         setSelectedTab(tabName)
+    }
+
+    const Saving = () => {
+        return(
+            <View style={Styles.savingContainer}>
+                <Text>Saving page</Text>
+            </View>
+        )
     }
 
     return (

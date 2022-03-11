@@ -2,7 +2,7 @@ import React from "react";
 import { View, TouchableOpacity } from 'react-native';
 import { Searchbar } from 'react-native-paper';
 
-import Styles from './Styles';
+import Styles from './indexStyle';
 import { Entypo } from '@expo/vector-icons'; 
 const SearchBarMap = () => {
     const [searchQuery, setSearchQuery] = React.useState('');
@@ -15,6 +15,7 @@ const SearchBarMap = () => {
                 <View style={Styles.outerSearchBox}>
                     <Searchbar
                         placeholder="Search "
+                        // autoFocus={true}
                         onChangeText={onChangeSearch}
                         value={searchQuery}
                         style={Styles.search}
