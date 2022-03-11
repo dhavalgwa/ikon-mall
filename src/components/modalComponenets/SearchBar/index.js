@@ -1,7 +1,7 @@
 import React from "react";
 import { View, TouchableOpacity } from 'react-native';
 import { Searchbar } from 'react-native-paper';
-import Styles from './indexStyle';
+import Styles from './Styles';
 import { Entypo } from '@expo/vector-icons';
 import { connect } from "react-redux";
 const SearchBars = () => {

@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { connect } from 'react-redux';
 import BottomTabNavigation from "../../Navigation/BottomTabNavigation";
 import Drawernavigation from "../../Navigation/DrawerNavigation";
-import Styles from './indexStyle';
+import Styles from './Styles';
 
 const Tab = createBottomTabNavigator();
 
@@ -15,8 +15,8 @@ const Dashboard = (props) => {
     }
 
     return (
-        <View style={Styles.DashboardContainer}>
-            <View style={Styles.Dashfooter}>
+        <View>
+            <View>
                 {/* <BottomTabNavigation/> */}
             </View>
         </View>

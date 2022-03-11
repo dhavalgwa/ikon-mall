@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { View, Text, TouchableOpacity, Image } from 'react-native';
 import { connect } from "react-redux";
-import Styles from '../../components/Address/indexStyle';
+import Styles from './Styles';
 
 import {
     setAddress,

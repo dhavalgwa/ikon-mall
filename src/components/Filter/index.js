@@ -5,8 +5,6 @@ import { connect } from 'react-redux';
 import { Color } from "../../constant/Constant";
 import { setFilter } from '../../redux/action/index';
 import LinearGradient from 'react-native-linear-gradient';
-// import { Entypo } from '@expo/vector-icons';
-// import RangeSlider, { Slider } from 'react-native-range-slider-expo';
 
 const { height } = Dimensions.get('screen');
 const Filter = (props) => {

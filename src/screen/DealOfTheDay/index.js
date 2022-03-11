@@ -6,7 +6,7 @@
 // import Banner from '../../components/StorePage/Banner/index';
 // import { setOneDayData, setBannerData, Products } from '../../redux/action/index';
 // import ItemCard from '../../components/StorePage/ItemCard/index';
-// import Styles from './indexStyle';
+// import Styles from './Styles';
 
 // const DealOfTheDay = (props) => {
 

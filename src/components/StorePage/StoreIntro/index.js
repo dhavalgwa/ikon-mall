@@ -8,7 +8,7 @@ import LinearGradient from 'react-native-linear-gradient';
 
 
 import { Color } from '../../../constant/Constant';
-import Styles from './indexStyle';
+import Styles from './Styles';
 import { connect } from 'react-redux';
 
 const StoreIntro = (props) => {

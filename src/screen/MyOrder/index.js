@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text } from 'react-native';
-import Styles from "./indexStyle";
+import Styles from "./Styles";
 
 const MyOrder = () => {
     return(

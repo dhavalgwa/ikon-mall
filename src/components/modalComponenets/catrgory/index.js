@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { View, Text, TouchableOpacity, ScrollView, Image } from 'react-native';
 import { connect } from "react-redux";
 
-import { Color } from "../../../constant/Constant";
-import Styles from './indexStyle';
+import Styles from './Styles';
 
 const Categorys = () => {
     const [data, setData] = useState(
@@ -29,12 +28,6 @@ const Categorys = () => {
                 image: 'https://media-exp1.licdn.com/dms/image/C560BAQHXJ3GqjqY2yg/company-logo_200_200/0/1625156541828?e=2159024400&v=beta&t=H1sPbklSygAAwqhC2OX05LXSSY9tUaOPRJu0DCTG-YA',
                 description: 'Shop for best selection Shoes every day low mony big store'
             },
-            // {
-            //     name: "Electronic",
-            //     image: 'https://media-exp1.licdn.com/dms/image/C560BAQHXJ3GqjqY2yg/company-logo_200_200/0/1625156541828?e=2159024400&v=beta&t=H1sPbklSygAAwqhC2OX05LXSSY9tUaOPRJu0DCTG-YA',
-            //     description: 'Shop for best selection Shoes every day low mony big store'
-            // },
-
         ]
     );
 

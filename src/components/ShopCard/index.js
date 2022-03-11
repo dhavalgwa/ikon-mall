@@ -5,7 +5,7 @@ import { Color } from "../../constant/Constant";
 import { Ionicons } from '@expo/vector-icons';
 import { connect } from 'react-redux';
 
-import Styles from '../ShopCard/indexStyle';
+import Styles from './Styles';
 import { setCategoryId, shopCartCategoryWiseId } from '../../redux/action/index';
 
 const ShopCard = (props) => {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, Image, ScrollView, TouchableOpacity } from 'react-native';
-import Styles from '../Shops/indexStyles';
+import Styles from './Styles';
 import { Ionicons } from '@expo/vector-icons';
 import LinearGradient from 'react-native-linear-gradient';
 import { Color } from "../../constant/Constant";

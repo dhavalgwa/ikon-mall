@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, Image, TextInput, TouchableOpacity, BackHandler, ScrollView, Alert } from 'react-native';
-import Styles from './indexStyle';
+import Styles from './Styles';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/Feather';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';

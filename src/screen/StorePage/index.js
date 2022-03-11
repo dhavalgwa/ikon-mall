@@ -4,7 +4,7 @@ import { StatusBar } from 'expo-status-bar';
 
 import StoreIntro from '../../components/StorePage/StoreIntro/index';
 import Banner from '../../components/StorePage/Banner/index';
-import Styles from '../../components/Category/indexStyle';
+import Styles from '../../components/Category/Styles';
 import storePageStyles from './indexStyle';
 import ItemCard from '../../components/StorePage/ItemCard/index';
 import { connect } from 'react-redux';

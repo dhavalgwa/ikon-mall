@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { FlatGrid } from 'react-native-super-grid';
 
 import Styles from './indexStyle';
-import LableCss from '../Home/indexStyle';
+import LableCss from '../Home/Styles';
 import SearchBar from '../../components/SearchBar/index';
 import BrandShopList from '../../components/BrandShopList/index';
 import { setFootball, Products, setFilter, setBrandData, categoryProduct } from '../../redux/action/index';

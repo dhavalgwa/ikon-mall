@@ -2,7 +2,7 @@ import React from "react";
 import { View, TouchableOpacity } from 'react-native';
 import { Searchbar } from 'react-native-paper';
 
-import Styles from './indexStyle';
+import Styles from './Styles';
 import { Entypo } from '@expo/vector-icons'; 
 const SearchBarMap = () => {
     const [searchQuery, setSearchQuery] = React.useState('');
