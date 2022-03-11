@@ -1,24 +1,29 @@
+import { any } from "react-native/Libraries/Text/TextNativeComponent";
+
 const initialState = {
-    login: [],
-    productData: [],
-    bannerData: [],
-    modelFilter: false,
-    shopData: [],
-    productList: [],
-    productBrandData: [],
-    homeCategoryData: [],
-    catWisProductData: [],
-    shopCategoryId: [],
-    shopCartCatWise: [],
-    categoryProductData: [],
-    addToCartItem: [],
-    getCartData: [],
-    removeCartItem: [],
-    likeData: [],
-    unLikeData: [],
-    productTitle: [],
-    brandId: [],
-    shopCardList: [],
+   // login: [],
+   // productData: [],
+    //bannerData: [],
+   // modelFilter: false,
+    // shopData: [],
+    usersList: [],
+    user: any,
+    loading : false,
+    errorMessage : null
+    // productBrandData: [],
+    // homeCategoryData: [],
+    // catWisProductData: [],
+    // shopCategoryId: [],
+    // shopCartCatWise: [],
+    // categoryProductData: [],
+    // addToCartItem: [],
+    // getCartData: [],
+    // removeCartItem: [],
+    // likeData: [],
+    // unLikeData: [],
+    // productTitle: [],
+    // brandId: [],
+    // shopCardList: [],
 };
 
 const initialData = (state = initialState, action) => {
@@ -27,9 +32,9 @@ const initialData = (state = initialState, action) => {
         case "DASHBOARD": {
             return { ...state, Dashboard: action.payload }
         }
-        case "SHOPDATA": {
-            return { ...state, shopData: action.payload }
-        }
+        // case "SHOPDATA": {
+        //     return { ...state, shopData: action.payload }
+        // }
         case "CATEGORYID": {
             return { ...state, Category: action.payload }
         }
