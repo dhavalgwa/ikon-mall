@@ -9,7 +9,7 @@ import SearchBar from '../../components/SearchBar/index';
 import BrandShopList from '../../components/BrandShopList/index';
 import { setFootball, Products, setFilter, setBrandData, categoryProduct } from '../../redux/action/index';
 import ProductItemCard from '../../components/StorePage/ItemCard/ProductItemCard';
-
+import Styles from "./indexStyle";
 const ProductList = (props) => {
     const [toggle, setToggle] = useState(false);
 
@@ -49,7 +49,7 @@ const ProductList = (props) => {
                     {
                         props.fetchData.productBrandData.data == undefined ? (
                             <View style={{ alignItems: 'center' }}>
-                                <Image source={require('../../assets/Images/Loader/Loading.gif')} style={{ height: 100, width: 100 }} />
+                                <Image source={require('../../assets/Images/Loader/Loading.gif')} style={Styles.image} />
                             </View>
                         ) : (
                             <BrandShopList brandData={props.fetchData.productBrandData.data} />
@@ -64,7 +64,7 @@ const ProductList = (props) => {
                 {
                     props?.fetchData.categoryProductData?.data == undefined ? (
                         <View style={{ alignItems: 'center' }}>
-                            <Image source={require('../../assets/Images/Loader/Loading.gif')} style={{ height: 100, width: 100 }} />
+                            <Image source={require('../../assets/Images/Loader/Loading.gif')} style={Styles.image} />
                         </View>
                     ) : (
                         <FlatGrid
@@ -94,27 +94,3 @@ export default connect(({ fetchData }) => ({
     fetchData,
 }), mapDispatchToProps)(ProductList);
 
-
-const styles = StyleSheet.create({
-    gridView: {
-        marginTop: 10,
-        margin:5,
-    
-    },
-    itemContainer: {
-        justifyContent: 'flex-end',
-        borderRadius: 5,
-        padding: 10,
-        height: 150,
-    },
-    itemName: {
-        fontSize: 16,
-        color: '#fff',
-        fontWeight: '600',
-    },
-    itemCode: {
-        fontWeight: '600',
-        fontSize: 12,
-        color: '#fff',
-    },
-});
