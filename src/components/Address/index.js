@@ -18,7 +18,7 @@ const Address = (props) => {
             <View style={Styles.addressViewContainer}>
                 <View style={Styles.addressView}>
                     <TouchableOpacity style={Styles.locationIcon}>
-                        <Image source={require('../../assets/Images/Location/locationLog.png')} style={{ height: 23, width: 20 }} />
+                        <Image source={require('../../assets/Images/Location/locationLog.png')} style={Styles.image} />
 
                     </TouchableOpacity>
                     <View style={Styles.addressTexView}>

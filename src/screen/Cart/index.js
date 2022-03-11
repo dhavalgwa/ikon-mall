@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { getCartData, addToCartProduct, removeCartProduct, deleteCartData } from "../../redux/action/index";
 import LinearGradient from 'react-native-linear-gradient';
 import Header from "../../components/header/index";
+import Styles from "./indexStyle";
 
 const Cart = (props) => {
     const toaster = useToast();
@@ -47,14 +48,14 @@ const Cart = (props) => {
 
     return (
         <View>
-            <View style={{ height: "10%", justifyContent: "center", alignItems: "center" }}>
+            <View style={Styles.Contener}>
                 <Header backButton={true} navData={props.navigation} />
             </View>
             <View>
-                <View style={{ display: "flex", justifyContent: "space-between", flexDirection: "row", height: "7%", width: "90%", marginLeft: 16, marginTop: 20 }}>
-                    <Text style={{ fontWeight: "500", fontSize: 20 }}>My Order</Text>
+                <View style={Styles.myOrderTextContener}>
+                    <Text style={Styles.myOrderText}>My Order</Text>
                     <TouchableOpacity>
-                        <Text style={{ color: "#DE1F36" }}>% Get Discount Coupon</Text>
+                        <Text style={Styles.Discount}>% Get Discount Coupon</Text>
                     </TouchableOpacity>
                 </View>
                 <ScrollView
@@ -63,51 +64,47 @@ const Cart = (props) => {
                     style={{ height: "66%" }}
                 >
                     {
-                        props?.fetchData.getCartData?.data?.length > 0 && props?.fetchData.getCartData?.data?.map((data, id) => {
+                        props?.cartData?.data?.length > 0 && props?.cartData?.data?.map((data, id) => {
                             return (
-                                <View key={id} style={{ width: "100%", alignItems: 'center', justifyContent: 'center' }} >
-                                    <View style={{ display: "flex", flexDirection: "row", backgroundColor: "white", borderRadius: 10, justifyContent: "space-between", width: "95%", margin: 5, padding: 5 }}>
-                                        <View style={{ justifyContent: "center", alignItems: "center", backgroundColor: "white" }}>
-                                            <Image source={{ uri: data.image }} style={{ justifyContent: "center", alignItems: "center", height: 100, width: 100, }} />
+                                <View key={id} style={Styles.mapView} >
+                                    <View style={Styles.subMapView}>
+                                        <View style={Styles.ImageView}>
+                                            <Image source={{ uri: data.image }} style={Styles.image} />
                                         </View>
-                                        <View style={{ backgroundColor: "white", width: "65%" }}>
-                                            <View style={{ marginLeft: 10, paddingTop: 10 }}>
-                                                <Text style={{ fontWeight: "400", fontSize: 14, }}>{data.productItemName}</Text>
-                                                <Text style={{ fontWeight: "400", fontSize: 14, paddingTop: 3 }}>{data.category}</Text>
-                                                <View style={{ flexDirection: "row", paddingTop: 5 }}>
-                                                    <Text style={{ fontSize: 16, fontWeight: "700", }}>{data.costPrice}</Text>
-                                                    <Text style={{ textDecorationStyle: "solid", textDecorationLine: "line-through", fontSize: 14, fontWeight: "400", marginLeft: 8 }}>{data.mrp}</Text>
-                                                    <Text style={{ color: "red", fontSize: 14, fontWeight: "400", marginLeft: 8 }}>{data.sellerPrice}</Text>
+                                        <View style={Styles.SubMapView2}>
+                                            <View style={Styles.productView}>
+                                                <Text style={Styles.productText}>{data.productItemName}</Text>
+                                                <Text style={Styles.categoryText}>{data.category}</Text>
+                                                <View style={Styles.price}>
+                                                    <Text style={Styles.CostPrice}>{data.costPrice}</Text>
+                                                    <Text style={Styles.mrp}>{data.mrp}</Text>
+                                                    <Text style={Styles.sellerPrice}>{data.sellerPrice}</Text>
                                                 </View>
-                                                <View style={{ flexDirection: "row", paddingTop: 10, justifyContent: 'space-between', width: "100%" }}>
-                                                    <View style={{ flexDirection: "row", justifyContent: "space-between" }} >
+                                                <View style={Styles.button}>
+                                                    <View style={Styles.subButton} >
                                                         {
                                                             data.quantity == 1 ? (
-                                                                <TouchableOpacity style={{ height: 35, width: 35, backgroundColor: "#4E6CFF", borderRadius: 20, alignItems: 'center', justifyContent: 'center' }} onPress={() => deleteCart(data.productItemId)}>
-                                                                    <Text>Delete</Text>
-                                                                    {/* <AntDesign name="delete" size={15}
-                                                                        style={{ color: "white" }} /> */}
+                                                                <TouchableOpacity style={Styles.deleteButton} onPress={() => deleteCart(data.productItemId)}>
+                                                                    <AntDesign name="delete" size={15}
+                                                                        style={{ color: "white" }} />
                                                                 </TouchableOpacity>
                                                             ) : (
-                                                                <TouchableOpacity onPress={() => reduceCount(data.productItemId)} style={{ height: 35, width: 35, backgroundColor: "#7B9AFF", borderRadius: 20, alignItems: 'center', justifyContent: 'center' }}>
-                                                                    <Text>Remove</Text>
-                                                                    {/* <AntDesign name="minus" size={20}
-                                                                        style={{ color: "white" }} /> */}
+                                                                <TouchableOpacity onPress={() => reduceCount(data.productItemId)} style={Styles.minusButton}>
+                                                                    <AntDesign name="minus" size={20}
+                                                                        style={{ color: "white" }} />
                                                                 </TouchableOpacity>
                                                             )
                                                         }
-                                                        <Text style={{ fontSize: 21, marginLeft: 10, marginRight: 10 }} >{data.quantity}</Text>
-                                                        <TouchableOpacity onPress={() => increseCount(data.productItemId)} style={{ height: 35, width: 35, backgroundColor: "#7B9AFF", borderRadius: 20, alignItems: 'center', justifyContent: 'center' }}>
-                                                            <Text>Add</Text>
-                                                            {/* <AntDesign name="plus" size={20}
-                                                                style={{ color: "white" }} /> */}
+                                                        <Text style={Styles.qty} >{data.quantity}</Text>
+                                                        <TouchableOpacity onPress={() => increseCount(data.productItemId)} style={Styles.plusButton}>
+                                                            <AntDesign name="plus" size={20}
+                                                                style={{ color: "white" }} />
                                                         </TouchableOpacity>
                                                     </View>
                                                     <View >
-                                                        <TouchableOpacity style={{ height: 35, width: 35, backgroundColor: "#4E6CFF", borderRadius: 20, alignItems: 'center', justifyContent: 'center' }} onPress={() => deleteCart(data.productItemId)}>
-                                                            <Text>Delete</Text>
-                                                            {/* <AntDesign name="delete" size={15}
-                                                                style={{ color: "white" }} /> */}
+                                                        <TouchableOpacity style={Styles.deleteButton2} onPress={() => deleteCart(data.productItemId)}>
+                                                            <AntDesign name="delete" size={15}
+                                                                style={{ color: "white" }} />
                                                         </TouchableOpacity>
                                                     </View>
                                                 </View>
@@ -117,28 +114,26 @@ const Cart = (props) => {
                                 </View>
                             )
                         })}
-
                 </ScrollView>
                 {/* {BUTTON And total amount} */}
-                <View style={{ backgroundColor: "white", height: "15%", display: "flex", flexDirection: 'row', justifyContent: "space-between", width: "100%", alignItems: "center" }}>
-                    {props?.fetchData.getCartData?.data?.length == 0 ? (<View style={{ marginLeft: 10 }}>
-                        <Text style={{ fontWeight: "400", fontSize: 18, color: "#5270FF" }}>Total amount</Text>
-                        <Text style={{ fontWeight: "bold", fontSize: 24 }}>${0.00}</Text>
-                    </View>) : (<View style={{ marginLeft: 10 }}>
-                        <Text style={{ fontWeight: "400", fontSize: 18, color: "#5270FF" }}>Total amount</Text>
-                        <Text style={{ fontWeight: "bold", fontSize: 24 }}>${totalvalue}</Text>
+                <View style={Styles.mainButton}>
+                    {props?.cartData?.data?.length == 0 ? (<View style={Styles.totalButton}>
+                        <Text style={Styles.ButtonText}>Total amount</Text>
+                        <Text style={Styles.valueDispaly}>${0.00}</Text>
+                    </View>) : (<View style={Styles.totalButton}>
+                        <Text style={Styles.ButtonText}>Total amount</Text>
+                        <Text style={Styles.valueDispaly}>${totalvalue}</Text>
                     </View>)
 
                     }
-                    <View style={{ marginRight: 10, }}>
-                        <LinearGradient
-                            start={{ x: 0, y: 0 }}
-                            end={{ x: 1, y: 0 }}
-                            colors={["#4E6CFF", "#7B9AFF"]}
-                            style={{ height: 49 }}
-                        >
-                            <TouchableOpacity style={{ height: 60, width: 175, borderRadius: 25, display: "flex", justifyContent: 'center', alignItems: "center" }}>
-                                <Text style={{ fontSize: 18, fontWeight: "bold", color: "white" }}>Checkout</Text>
+                    <View style={Styles.checkoutButton}>
+                        <LinearGradient style={Styles.LinearGradients}
+                            start={{ x: 0.0, y: 0.5 }}
+                            end={{ x: 0.5, y: 1.0 }}
+                            locations={[0, 1]}
+                            colors={['#4E6CFF', '#7B9AFF']}>
+                            <TouchableOpacity style={Styles.checkout}>
+                                <Text style={Styles.checkoutText}>Checkout</Text>
                             </TouchableOpacity>
                         </LinearGradient>
                     </View>
