@@ -7,7 +7,6 @@ import { SHOPDATA } from './types';
 
 export const setShopData = () => {
 
-    
     return (dispatch) => {
         dispatch({
             type: ACTION_TYPES.GET_SHOPS_LIST_REQUEST,

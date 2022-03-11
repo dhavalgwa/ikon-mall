@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React, { useEffect } from "react";
-import { View, Text, ScrollView, TouchableOpacity, BackHandler, SafeAreaView, Image } from 'react-native';
+import { View, ScrollView, BackHandler, SafeAreaView } from 'react-native';
 import { connect } from 'react-redux';
 import LinearGradient from 'react-native-linear-gradient';
 
@@ -23,7 +23,6 @@ import {
 import { setShopData } from '../../redux/action/shop';
 
 const HomePage = (props) => {
-    console.log("props.shopList ::", props.shopList);
     useEffect(() => {
         props.ProductCategory();
         props.allShopDataCategoryWise();
@@ -68,7 +67,7 @@ const HomePage = (props) => {
                     <SearchBar filter={false} />
                 </View>
                 <View>
-                    <LabelView navigate={navigate} />
+                    <LabelView navigate={navigate} label={'Choose your shop'} view={'View all'} />
                 </View>
                 <View style={Styles.shopListContainer}>
                     <View style={Styles.shopListView}>
@@ -93,7 +92,7 @@ const HomePage = (props) => {
                 <View style={Styles.shopCardView}>
                     {
                         props.isLoader ? (
-                            <Loader text={"Loading Shops"} image={"https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/200.gif"} />
+                            <Loader/>
                         ) : (
                             <ShopCard navData={props.navigation} data={props.shopList} />
                         )
