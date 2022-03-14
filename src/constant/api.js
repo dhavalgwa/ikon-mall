@@ -1,0 +1,1 @@
+export const api = 'https://icon-mall.herokuapp.com';
