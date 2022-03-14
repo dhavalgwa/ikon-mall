@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { View, Text, Image, ScrollView, TouchableOpacity } from 'react-native';
 import Styles from './Styles';
-// import { Ionicons } from '@expo/vector-icons';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import LinearGradient from 'react-native-linear-gradient';
 import { Color } from "../../constant/Constant";
 import { connect } from "react-redux";
@@ -55,7 +55,7 @@ const ShopList = (props) => {
                                     style={Styles.bottomLinear}
                                 >
                                     <View style={Styles.timeView}>
-                                        {/* <Ionicons name="time" size={15} color={"white"} /> */}
+                                        <Ionicons name="time" size={15} color={"white"} />
                                         <Text style={Styles.timeText}>  {openTime} - {closeTime}</Text>
                                     </View>
                                 </LinearGradient>

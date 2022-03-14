@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
 import { Text, View, Image, TouchableOpacity, BackHandler, Platform } from "react-native";
 import LinearGradient from 'react-native-linear-gradient';
-// import Ionicons from 'react-native-vector-icons/Ionicons';
-// import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Styles from "./Styles";
 
@@ -30,7 +29,7 @@ const Header = (props) => {
                     {
                         props.backButton == true ? (
                             <TouchableOpacity onPress={handleBackButtonClick}>
-                                <Text>set Icon</Text>
+                                <Ionicons name="arrow-back" size={25} color="black" />
                             </TouchableOpacity>
                         ) : null
                     }

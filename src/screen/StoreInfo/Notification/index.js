@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, Image, ScrollView } from 'react-native';
 // import { Ionicons } from '@expo/vector-icons';
 // import { Entypo } from '@expo/vector-icons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+
 import Styles from './indexStyle';
 import { connect } from 'react-redux';
 import { setNotification, updateNotification } from '../../../redux/action/index';
@@ -64,7 +66,7 @@ const Notification = (props) => {
                       </View>
                       <View>
                         <TouchableOpacity onPress={() => ShowDec(id, data.id)}>
-                          {/* <Entypo
+                          {/* <MaterialCommunityIcons
                             name="chevron-down"
                             size={24}
                             color="black"
@@ -105,12 +107,12 @@ const Notification = (props) => {
                       </View>
                       <View>
                         <TouchableOpacity onPress={() => ShowDec(id, data.id)}>
-                          {/* <Ionicons
-                            name="chevron-forward"
+                          <MaterialIcons
+                            name="keyboard-arrow-right"
                             size={24}
                             color="black"
                             style={Styles.icon}
-                          /> */}
+                          />
                         </TouchableOpacity>
                       </View>
                     </View>

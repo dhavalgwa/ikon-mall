@@ -1,10 +1,9 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
-// import { MaterialIcons } from '@expo/vector-icons';
-// import { Foundation } from '@expo/vector-icons';
-// import { Ionicons } from '@expo/vector-icons';
-// import { AntDesign } from '@expo/vector-icons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import LinearGradient from 'react-native-linear-gradient';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
 
 import { Color } from '../../../constant/Constant';
@@ -54,7 +53,7 @@ const StoreIntro = (props) => {
                             <View style={Styles.nameView}>
                                 <Text style={Styles.nameText}>{props.Data.shopName}</Text>
                                 <TouchableOpacity>
-                                    {/* <MaterialIcons name="keyboard-arrow-down" size={24} color="white" /> */}
+                                    <MaterialIcons name="keyboard-arrow-down" size={24} color="white" />
                                 </TouchableOpacity>
                             </View>
                             <Text style={Styles.timeText} >Working hours {openTime} - {closeTime}</Text>
@@ -62,7 +61,7 @@ const StoreIntro = (props) => {
                     </View>
                     <View style={Styles.notificationView}>
                         <TouchableOpacity onPress={goToNotification} style={Styles.notiFication} >
-                            {/* <MaterialIcons name="notifications" size={24} color="#516FFF" /> */}
+                            <Ionicons name="notifications" size={24} color="#516FFF" />
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -71,7 +70,7 @@ const StoreIntro = (props) => {
                     <View style={Styles.blureContainView}>
                         <View style={Styles.blureView}>
                             <TouchableOpacity>
-                                {/* <AntDesign name="star" size={17} color={Color.orange} /> */}
+                                <AntDesign name="star" size={17} color={Color.orange} />
                             </TouchableOpacity>
                             <Text style={Styles.blureRatingText}>  {props.Data.rating.$numberDecimal}</Text>
                         </View>
@@ -87,11 +86,11 @@ const StoreIntro = (props) => {
                     >
                         <View style={Styles.marketInfoOrderProcessView}>
                             <TouchableOpacity onPress={goToMarketInfo} style={Styles.marketInfoView}>
-                                {/* <Foundation name="info" size={24} color={"white"} /> */}
+                                <AntDesign name="infocirlce" size={24} color={"white"} />
                                 <Text style={Styles.marketInfoText}>Market info</Text>
                             </TouchableOpacity>
                             <TouchableOpacity style={Styles.marketInfoView}>
-                                {/* <Ionicons name="md-location-sharp" size={24} color={"white"} /> */}
+                                <Ionicons name="md-location-sharp" size={24} color={"white"} />
                                 <Text style={Styles.orderText}>Order in process</Text>
                             </TouchableOpacity>
                         </View>
