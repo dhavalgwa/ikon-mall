@@ -1,9 +1,10 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
-// import { AntDesign } from '@expo/vector-icons';
 import { connect } from 'react-redux';
 import LinearGradient from 'react-native-linear-gradient';
 import { useToast } from 'react-native-paper-toast';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+
 import Styles from './Styles';
 import { Color } from "../../../constant/Constant";
 import { addToCartProduct, like, setProduct, unLike } from '../../../redux/action/index';
@@ -44,11 +45,11 @@ const ItemCard = (props) => {
                             {
                                 data.isLiked == true ? (
                                     <TouchableOpacity onPress={() => unLikeProduct(data._id)}>
-                                        {/* <AntDesign style={Styles.likeIcon} name="heart" size={24} color="red" /> */}
+                                        <AntDesign style={Styles.likeIcon} name="heart" size={24} color="red" />
                                     </TouchableOpacity>
                                 ) : (
                                     <TouchableOpacity onPress={() => likeData(data._id)}>
-                                        {/* <AntDesign style={Styles.likeIcon} name="hearto" size={24} color="black" /> */}
+                                        <AntDesign style={Styles.likeIcon} name="hearto" size={24} color="black" />
                                     </TouchableOpacity>
                                 )
                             }
@@ -67,7 +68,7 @@ const ItemCard = (props) => {
                         </View>
                         <View style={Styles.ratingView}>
                             <TouchableOpacity>
-                                {/* <AntDesign name="star" size={17} color={Color.orange} /> */}
+                                <AntDesign name="star" size={17} color={Color.orange} />
                             </TouchableOpacity>
                             <Text style={Styles.ratingText} >{data.rating}</Text>
                         </View>
@@ -86,7 +87,7 @@ const ItemCard = (props) => {
                             <View style={Styles.addItemView}>
                                 <Text style={Styles.priceText} >${data.costPrice}</Text>
                                 <TouchableOpacity onPress={() => addToCart(data._id)} style={Styles.addButton}>
-                                    {/* <AntDesign name="plus" size={20} color="black" /> */}
+                                    <AntDesign name="plus" size={20} color="black" />
                                 </TouchableOpacity>
                             </View>
                         </View>

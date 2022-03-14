@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Text, View, TouchableOpacity, Image, ScrollView } from "react-native";
 import { useToast } from 'react-native-paper-toast';
+import { AntDesign } from '@expo/vector-icons';
 import { connect } from 'react-redux';
 import { getCartData, addToCartProduct, removeCartProduct, deleteCartData } from "../../redux/action/index";
 import LinearGradient from 'react-native-linear-gradient';
-
-import AntDesign from 'react-native-vector-icons/AntDesign';
-
-
 import Header from "../../components/header/index";
 
 const Cart = (props) => {
@@ -87,26 +84,30 @@ const Cart = (props) => {
                                                         {
                                                             data.quantity == 1 ? (
                                                                 <TouchableOpacity style={{ height: 35, width: 35, backgroundColor: "#4E6CFF", borderRadius: 20, alignItems: 'center', justifyContent: 'center' }} onPress={() => deleteCart(data.productItemId)}>
-                                                                    <AntDesign name="delete" size={15}
-                                                                        style={{ color: "white" }} />
+                                                                    <Text>Delete</Text>
+                                                                    {/* <AntDesign name="delete" size={15}
+                                                                        style={{ color: "white" }} /> */}
                                                                 </TouchableOpacity>
                                                             ) : (
                                                                 <TouchableOpacity onPress={() => reduceCount(data.productItemId)} style={{ height: 35, width: 35, backgroundColor: "#7B9AFF", borderRadius: 20, alignItems: 'center', justifyContent: 'center' }}>
-                                                                    <AntDesign name="minus" size={20}
-                                                                        style={{ color: "white" }} />
+                                                                    <Text>Remove</Text>
+                                                                    {/* <AntDesign name="minus" size={20}
+                                                                        style={{ color: "white" }} /> */}
                                                                 </TouchableOpacity>
                                                             )
                                                         }
                                                         <Text style={{ fontSize: 21, marginLeft: 10, marginRight: 10 }} >{data.quantity}</Text>
                                                         <TouchableOpacity onPress={() => increseCount(data.productItemId)} style={{ height: 35, width: 35, backgroundColor: "#7B9AFF", borderRadius: 20, alignItems: 'center', justifyContent: 'center' }}>
-                                                            <AntDesign name="plus" size={20}
-                                                                style={{ color: "white" }} />
+                                                            <Text>Add</Text>
+                                                            {/* <AntDesign name="plus" size={20}
+                                                                style={{ color: "white" }} /> */}
                                                         </TouchableOpacity>
                                                     </View>
                                                     <View >
                                                         <TouchableOpacity style={{ height: 35, width: 35, backgroundColor: "#4E6CFF", borderRadius: 20, alignItems: 'center', justifyContent: 'center' }} onPress={() => deleteCart(data.productItemId)}>
-                                                            <AntDesign name="delete" size={15}
-                                                                style={{ color: "white" }} />
+                                                            <Text>Delete</Text>
+                                                            {/* <AntDesign name="delete" size={15}
+                                                                style={{ color: "white" }} /> */}
                                                         </TouchableOpacity>
                                                     </View>
                                                 </View>
